@@ -36,9 +36,9 @@ void Temporada::setDuracion(int d){duracion = d;}
 void Temporada::agregarEpisodio(Episodio e){episodios.push_back(e);}
 
 void Temporada::toString(){
-    std::cout << std::endl <<"Temporada: " + id + ". Duración: " + std::to_string(getDuracion()) + " minutos. Género: " + genero +  ". Calificación: " + std::to_string(getCalificacion()) << std::endl;
+    std::cout << std::endl <<"ID: " + id + "Temporada: " + nombre + ". Duración: " + std::to_string(getDuracion()) + " minutos. Género: " + genero +  ". Calificación: " + std::to_string(getCalificacion()) << std::endl;
     for(int i = 0; i < episodios.size(); ++i){
-        std::cout << "Episodio " + std::to_string(i) + ". "; 
+        std::cout << "Episodio " + std::to_string(i+1) + ". "; 
         episodios[i].toString();
     }
 }

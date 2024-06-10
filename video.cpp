@@ -33,6 +33,6 @@ float Video::getCalificacion(){return calificacion;}
 void Video::setCalificacion(float c){calificacion = c;}
 
 void Video::toString(){
-    std::cout << nombre + ". Duración: " + std::to_string(duracion) + " minutos. Género: " + genero +  ". Calificación: " + std::to_string(calificacion) << std::endl;
+    std::cout << "ID: " + id + "Nombre:" + nombre + ". Duración: " + std::to_string(duracion) + " minutos. Género: " + genero +  ". Calificación: " + std::to_string(calificacion) << std::endl;
 }
 

@@ -36,7 +36,7 @@ void Serie::setCalificacion(float c){calificacion = c;}
 void Serie::agregarTemporada(Temporada* t){temporadas.push_back(t);}
 
 void Serie::toString(){
-    std::cout << std::endl << std::endl <<"Serie. Nombre: " + nombre + ". Duración: " + std::to_string(getDuracion()) + " minutos. Género: " + genero +  ". Calificación: " + std::to_string(getCalificacion()) << std::endl;
+    std::cout << std::endl << std::endl <<"ID: " + id + "Serie. Nombre: " + nombre + ". Duración: " + std::to_string(getDuracion()) + " minutos. Género: " + genero +  ". Calificación: " + std::to_string(getCalificacion()) << std::endl;
     for (Temporada* video : temporadas) {
         video->toString();
     }

@@ -14,6 +14,8 @@ class Catalogo{
     public:
 
     Catalogo();
+    std::vector <Video*> getCatalogo();
+    Video* getVideo(std::string ind);
     void agregarVideo(Video*);
     void toStringC();
 

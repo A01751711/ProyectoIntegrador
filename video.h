@@ -15,7 +15,6 @@ class Video{
     Video(std::string, std::string, int, std::string, float);
 
     public:
-
     std::string getID();
     void setID(std::string);
     std::string getNombre();

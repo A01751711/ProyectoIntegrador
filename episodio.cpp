@@ -13,5 +13,5 @@ Episodio::Episodio(std::string aid, std::string nom, int du, std::string ge, flo
 
 
 void Episodio::toString(){
-    std::cout << nombre + ". Duración: " + std::to_string(duracion) + " minutos. Género: " + genero +  ". Calificación: " + std::to_string(calificacion) << std::endl;
+    std::cout << "ID: " + id + "Nombre: " + nombre + ". Duración: " + std::to_string(duracion) + " minutos. Género: " + genero +  ". Calificación: " + std::to_string(calificacion) << std::endl;
 }
