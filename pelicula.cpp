@@ -13,5 +13,5 @@ Pelicula::Pelicula(std::string aid, std::string nom, int du, std::string ge, flo
 
 
 void Pelicula::toString(){
-    std::cout << "Pelicula. Nombre: " + nombre + ". Duración: " + std::to_string(duracion) + " minutos. Género: " + genero +  ". Calificación: " + std::to_string(calificacion) << std::endl;
+    std::cout << std::endl << std::endl <<"Pelicula. Nombre: " + nombre + ". Duración: " + std::to_string(duracion) + " minutos. Género: " + genero +  ". Calificación: " + std::to_string(calificacion) << std::endl;
 }

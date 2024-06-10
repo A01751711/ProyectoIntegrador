@@ -9,7 +9,7 @@ class Serie : public Video{
 
     private:
     int temp;
-    std::vector <Temporada> temporadas;
+    std::vector <Temporada*> temporadas;
     
     public:
 
@@ -18,7 +18,7 @@ class Serie : public Video{
     void setDuracion(int);
     float getCalificacion();
     void setCalificacion(float);
-    void agregarTemporada(Temporada);
+    void agregarTemporada(Temporada*);
     void toString();
 
 };

@@ -9,12 +9,13 @@ class Catalogo{
 
     private:
 
-    std::vector <Video> catalogo;
+    std::vector <Video*> catalogo;
     
     public:
 
     Catalogo();
-    void toString();
+    void agregarVideo(Video*);
+    void toStringC();
 
 };
 

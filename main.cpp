@@ -5,9 +5,63 @@
 #include "temporada.h"
 #include "episodio.h"
 #include <iostream>
+#include <exception>
+using std::cout;
+using std::endl;
+using std::cin;
+using std::runtime_error;
 
 
+int seleccionarOpcion(){
 
+    int input {6};
+    bool valido {false};
+
+    while (!valido){        
+        cout << "Selecciona opción: " << endl;
+        cin >> input;
+        try{
+            if (cin.fail()) throw runtime_error{"El dato debe de ser un entero."};
+            else{
+                valido = true;
+            }
+        } catch (runtime_error e){
+            cout << "Error en el programa: " << e.what() << endl;
+            cout << "Vuelve a intentarlo...\n\n";
+            cin.clear();
+            cin.ignore(32767,'\n');
+        }
+    }
+    return input;
+}
+
+void menu(){
+    
+        cout << endl << endl << "***** MENU PRINCIPAL *****"<< endl;
+        cout << "1) Mostrar catálogo completo"<<endl;
+        cout << "2) Mostrar los videos en general con una cierta calificación o de un cierto género"<<endl;
+        cout << "3) Mostrar los episodios de una determinada serie con una calificacion determinada"<<endl;
+        cout << "4) Mostrar las películas con cierta calificacion"<<endl;
+        cout << "5) Calificar un video"<<endl;
+        cout << "0) Salir"<<endl;
+
+}
+
+void caso2(){
+    
+}
+
+void caso3(){
+    
+}
+
+void caso4(){
+    
+}
+
+void caso5(){
+    
+}
 
 int main(){
 
@@ -18,8 +72,8 @@ int main(){
     Serie s1("SM","Smiling Friends","Comedia",2);
     Temporada t11("SM1","Smiling Friends Temporada 1","Comedia", 2);
     Temporada t12("SM2","Smiling Friends Temporada 2","Comedia", 2);
-    s1.agregarTemporada(t11);
-    s1.agregarTemporada(t12);
+    s1.agregarTemporada(&t11);
+    s1.agregarTemporada(&t12);
     Episodio t111("SM11","Smiling Friends Temporada 1 Episodio 1", 10, "Comedia", 10);
     Episodio t112("SM12","Smiling Friends Temporada 1 Episodio 2", 11, "Comedia", 9);
     t11.agregarEpisodio(t111);
@@ -32,9 +86,9 @@ int main(){
     Temporada t21("TW1","The Witcher Temporada 1","Fantasia", 3);
     Temporada t22("TW2","The Witcher Temporada 2","Fantasia", 3);
     Temporada t23("TW3","The Witcher Temporada 3","Fantasia", 3);
-    s2.agregarTemporada(t21);
-    s2.agregarTemporada(t22);
-    s2.agregarTemporada(t23);
+    s2.agregarTemporada(&t21);
+    s2.agregarTemporada(&t22);
+    s2.agregarTemporada(&t23);
     Episodio t211("TW11","The Witcher Temporada 1 Episodio 1", 50, "Fantasia", 1);
     Episodio t212("TW12","The Witcher Temporada 1 Episodio 2", 51, "Fantasia", 5);
     Episodio t213("TW13","The Witcher Temporada 1 Episodio 3", 49, "Fantasia", 2);
@@ -53,5 +107,44 @@ int main(){
     t23.agregarEpisodio(t231);
     t23.agregarEpisodio(t232);
     t23.agregarEpisodio(t233);
+
+    plataforma.agregarVideo(&p1);
+    plataforma.agregarVideo(&p2);
+    plataforma.agregarVideo(&s1);
+    plataforma.agregarVideo(&s2);
+    plataforma.agregarVideo(&p3);
+
+    int input = 6;
+
+    while(input != 0){
+    
+        menu();
+
+        input = seleccionarOpcion();
+
+        switch (input) {
+            case 1:
+                plataforma.toStringC();
+                break;
+            case 2:
+                caso2();
+                break;
+            case 3:
+                caso3();
+                break;
+            case 4:
+                caso4();
+                break;
+            case 5:
+                plataforma.toStringC();
+                break;
+            case 0:
+                break;
+            default:
+                cout << "No es una opción\n";
+                break;
+        }
+
+    }
 
 };

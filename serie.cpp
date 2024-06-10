@@ -15,7 +15,7 @@ Serie::Serie(std::string aid, std::string nom, std::string ge, int te) : Video{}
 int Serie::getDuracion(){
     int duras = 0;
     for(int i = 0; i < temporadas.size(); ++i){
-        duras = duras + temporadas[i].getDuracion();
+        duras = duras + temporadas[i]->getDuracion();
     }
     return duras;
 }
@@ -25,7 +25,7 @@ void Serie::setDuracion(int d){duracion = d;}
 float Serie::getCalificacion(){
     float cali = 0;
     for(int i = 0; i < temporadas.size(); ++i){
-        cali = cali + temporadas[i].getCalificacion();
+        cali = cali + temporadas[i]->getCalificacion();
     }
     cali = cali/temporadas.size();
     return cali;
@@ -33,13 +33,12 @@ float Serie::getCalificacion(){
 
 void Serie::setCalificacion(float c){calificacion = c;}
 
-void Serie::agregarTemporada(Temporada t){temporadas.push_back(t);}
+void Serie::agregarTemporada(Temporada* t){temporadas.push_back(t);}
 
 void Serie::toString(){
-    std::cout << "Serie. Nombre: " + nombre + ". Duración: " + std::to_string(getDuracion()) + " minutos. Género: " + genero +  ". Calificación: " + std::to_string(calificacion) << std::endl;
-    for(int i = 0; i < temporadas.size(); ++i){
-        std::cout << "Temporada " + std::to_string(i) + ". " << std::endl;
-        temporadas[i].toString();
+    std::cout << std::endl << std::endl <<"Serie. Nombre: " + nombre + ". Duración: " + std::to_string(getDuracion()) + " minutos. Género: " + genero +  ". Calificación: " + std::to_string(getCalificacion()) << std::endl;
+    for (Temporada* video : temporadas) {
+        video->toString();
     }
 
 }
