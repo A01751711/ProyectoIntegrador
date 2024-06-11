@@ -1,11 +1,11 @@
-#ifndef SERIE_H //César Pascual De la Torre A01751521 Karol Alexis A01751711
+#ifndef SERIE_H //Karol Alexis Alvarado Davila A01751711
 #define SERIE_H 
 #include <string>
 #include <vector>
 #include "temporada.h"
-#include "video.h"
+#include "multimedia.h"
 
-class Serie : public Video{
+class Serie : public Multimedia{
 
     private:
     int temp;
@@ -14,6 +14,7 @@ class Serie : public Video{
     public:
 
     Serie(std::string, std::string, std::string, int);
+    std::vector <Temporada*> getVector();
     int getDuracion();
     void setDuracion(int);
     float getCalificacion();

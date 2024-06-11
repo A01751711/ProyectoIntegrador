@@ -1,9 +1,9 @@
-#ifndef PELI_H //César Pascual De la Torre A01751521 Karol Alexis A01751711
+#ifndef PELI_H //César Pascual De la Torre A01751521 
 #define PELI_H 
 #include <string>
-#include "video.h"
+#include "multimedia.h"
 
-class Pelicula : public Video{
+class Pelicula : public Multimedia{
 
     public:
 

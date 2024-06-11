@@ -1,20 +1,20 @@
 <mxfile host="65bd71144e">
     <diagram id="-sedFjgzQwYQpW2mozQo" name="Página-1">
-        <mxGraphModel dx="858" dy="1566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="858" dy="1479" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="10" value="&lt;br&gt;Video" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="220" y="-70" width="260" height="340" as="geometry"/>
+                <mxCell id="10" value="&amp;lt;&amp;lt;Abstract&amp;gt;&lt;br&gt;Multimedia" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="-70" width="260" height="400" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="&lt;span style=&quot;&quot;&gt;# id : string&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;# nombre : string&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;# duracion : int&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;# genero : string&lt;br&gt;# calificacion : float&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="10" vertex="1">
-                    <mxGeometry y="55" width="260" height="85" as="geometry"/>
+                <mxCell id="12" value="&lt;span style=&quot;&quot;&gt;# id : string&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;# nombre : string&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;# duracion : int&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;# genero : string&lt;br&gt;# calificacion : float&lt;br&gt;# tipo : string&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="10" vertex="1">
+                    <mxGeometry y="55" width="260" height="105" as="geometry"/>
                 </mxCell>
                 <mxCell id="15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="10" vertex="1">
-                    <mxGeometry y="140" width="260" height="8" as="geometry"/>
+                    <mxGeometry y="160" width="260" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="#Video()&lt;br&gt;#Video(string, string, int, string, float)&lt;br&gt;+string getID()&lt;br&gt;+void setID(string)&lt;br&gt;+ string getNombre()&lt;br&gt;+ void setNombre(string)&lt;br&gt;+&amp;lt;&amp;lt;virtual&amp;gt;&amp;gt; int getDuracion()&lt;br&gt;+&amp;lt;&amp;lt;virtual&amp;gt;&amp;gt; void setDuracion(int)&lt;br&gt;+string getGenero()&lt;br&gt;+void setGenero(string)&lt;br&gt;+ &amp;lt;&amp;lt;virtual&amp;gt;&amp;gt; float getCalificacion()&lt;br&gt;+ &amp;lt;&amp;lt;virtual&amp;gt;&amp;gt; void setCalificacion(float)&lt;br&gt;+&amp;lt;&amp;lt;virtual&amp;gt;&amp;gt; void toString()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="10" vertex="1">
-                    <mxGeometry y="148" width="260" height="192" as="geometry"/>
+                <mxCell id="17" value="#Multimedia()&lt;br&gt;# Multimedia(string, string, int, string, float)&lt;br&gt;+string getTipo()&lt;br&gt;+string getID()&lt;br&gt;+void setID(string)&lt;br&gt;+ string getNombre()&lt;br&gt;+ void setNombre(string)&lt;br&gt;+&amp;lt;&amp;lt;virtual&amp;gt;&amp;gt; int getDuracion()&lt;br&gt;+&amp;lt;&amp;lt;virtual&amp;gt;&amp;gt; void setDuracion(int)&lt;br&gt;+string getGenero()&lt;br&gt;+void setGenero(string)&lt;br&gt;+ &amp;lt;&amp;lt;virtual&amp;gt;&amp;gt; float getCalificacion()&lt;br&gt;+ &amp;lt;&amp;lt;virtual&amp;gt;&amp;gt; void setCalificacion(float)&lt;br&gt;+&amp;lt;&amp;lt;virtual&amp;gt;&amp;gt; void toString()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="10" vertex="1">
+                    <mxGeometry y="168" width="260" height="232" as="geometry"/>
                 </mxCell>
                 <mxCell id="18" value="Pelicula" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" parent="1" vertex="1">
                     <mxGeometry x="20" y="340" width="220" height="155" as="geometry"/>
@@ -106,7 +106,7 @@
                         <mxPoint x="610" y="440" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="66" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;entryX=-0.014;entryY=0.106;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" target="37" edge="1" source="49">
+                <mxCell id="66" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;entryX=-0.014;entryY=0.106;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="49" target="37" edge="1">
                     <mxGeometry x="-1" y="3" relative="1" as="geometry">
                         <mxPoint x="660" y="500" as="sourcePoint"/>
                         <mxPoint x="820" y="500" as="targetPoint"/>

@@ -1,8 +1,8 @@
-#include "episodio.h" //César Pascual De la Torre A01751521 Karol Alexis A01751711
-#include "video.h"
+#include "episodio.h" //Karol Alexis Alvarado Davila A01751711
+#include "multimedia.h"
 #include <iostream>
 
-Episodio::Episodio(std::string aid, std::string nom, int du, std::string ge, float cal) : Video{} {
+Episodio::Episodio(std::string aid, std::string nom, int du, std::string ge, float cal) : Multimedia{"e"} {
     id = aid;
     nombre = nom;
     duracion = du;

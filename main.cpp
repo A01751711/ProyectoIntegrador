@@ -1,9 +1,10 @@
-#include "serie.h" //César Pascual De la Torre A01751521 Karol Alexis A01751711
+#include "serie.h" //César Pascual De la Torre A01751521 Karol Alexis Alvarado Davila A01751711
 #include "pelicula.h"
 #include "catalogo.h"
-#include "video.h"
+#include "multimedia.h"
 #include "temporada.h"
 #include "episodio.h"
+#include <vector>
 #include <iostream>
 #include <exception>
 using std::cout;
@@ -34,56 +35,112 @@ int seleccionarOpcion(){
     }
     return input;
 }
+// Karol Alexis Alvarado Davila A01751711
 
 void menu(){
     
         cout << endl << endl << "***** MENU PRINCIPAL *****"<< endl;
-        cout << "1) Mostrar catálogo completo"<<endl;
-        cout << "2) Mostrar los videos en general con una cierta calificación o de un cierto género"<<endl;
-        cout << "3) Mostrar los episodios de una determinada serie con una calificacion determinada"<<endl;
+        cout << "1) Datos"<<endl;
+        cout << "2) Mostrar los videos en general con una cierta calificación o género"<<endl;
+        cout << "3) Mostrar los episodios de una serie con cierta calificacion"<<endl;
         cout << "4) Mostrar las películas con cierta calificacion"<<endl;
         cout << "5) Calificar un video"<<endl;
         cout << "0) Salir"<<endl;
 
 }
+//César Pascual De la Torre A01751521
 
-void caso2(){
-    cout << "De que calificacion quieres obtener los videos" << endl;
-    int input2 = 0;
-    cin >> input2;
-    switch(input2){
-        case 4:
-        cout << "ID: SM2Temporada: Smiling Friends Temporada 2. Duración: 21 minutos. Género: Comedia. Calificación: 4.000000" << endl;
-        cout << "Episodio 0. ID: SM21Nombre: Smiling Friends Temporada 2 Episodio 1. Duración: 9 minutos. Género: Comedia. Calificación: 4.000000" << endl;
-        cout << "Episodio 2. ID: SM22Nombre: Smiling Friends Temporada 2 Episodio 2. Duración: 12 minutos. Género: Comedia. Calificación: 4.000000" << endl ;
-            break;
-        case 5:
-        cout << "ID: ESDLAPelicula. Nombre: El Señor de los Anillos. Duración: 180 minutos. Género: Fantasia. Calificación: 5.000000" << endl;
-            break;
+void caso2(Catalogo* &plat) {
+    int caso2 = 0;
+    float caso22 = 0;
+    std::string caso23;
+
+    cout << endl << endl << "***** Mostrar los videos en general con una cierta calificación o género *****" << endl;
+    cout << "1) Por calificación (Se mostrarán los videos con esa calificación exacta)" << endl;
+    cout << "2) Por género (Utiliza la primer letra mayúscula y no utilices acentos)" << endl;
+    cin >> caso2;
+
+    switch (caso2) {
+        case 1:{
+            cout << endl << "Ingrese la calificación deseada para mostrar los videos:" << endl;
+            cin >> caso22;
+            std::vector<Multimedia*> cata = plat->getCatalogo();
+
+            for (Multimedia* &vide : cata) {
+
+                if (vide->getCalificacion() == caso22) {
+                    vide->toString(); 
+                }
+            }
+        break;
+        }case 2:{
+            cout << endl << "Ingrese el genero deseado para mostrar los videos:" << endl;
+            cin >> caso23;
+            std::vector<Multimedia*> cata = plat->getCatalogo();
+
+            for (Multimedia* &vide : cata) {
+
+                if (vide->getGenero() == caso23) {
+                    vide->toString(); 
+                }
+            }
+        break;}
+    }
+}
+// Karol Alexis Alvarado Davila A01751711
+
+void caso3(Catalogo* &plat){
+    int caso3 = 0;
+    std::string caso31;
+    cout << "Ingrese el ID de la serie de la que deseas obtener la calificación" << endl;
+    cin >> caso31;
+    cout << "Ingrese la calificación deseada para mostrar los episodios" << endl;
+    cin >> caso3;
+    std::vector<Multimedia*> cata = plat->getCatalogo();
+
+    for (Multimedia* &vide : cata) {
+        if(vide->getTipo() == "s"){
+            if (vide->getID() == caso31) {
+            }
+        }
     }
 }
 
-void caso3(){
-    
+
+void caso4(Catalogo* &plat){
+    int caso4 = 0;
+    cout << "Ingrese la calificación deseada para mostrar las peliculas" << endl;
+    cin >> caso4;
+    std::vector<Multimedia*> cata = plat->getCatalogo();
+
+    for (Multimedia* &vide : cata) {
+        if(vide->getTipo() == "p"){
+            if (vide->getCalificacion() == caso4) {
+                vide->toString(); 
+            }
+        }
+    }
 }
+// Karol Alexis Alvarado Davila A01751711
 
-void caso4(Catalogo* plat){
+void caso5(Catalogo* &plat){
+    float caso5 = 0;
+    std::string caso51;
+    cout << "Ingrese el ID de la pelicula del deseas cambiar la calificación" << endl;
+    cin >> caso51;
+    cout << "Ingrese la calificación deseada para cambiar" << endl;
+    cin >> caso5;
+    std::vector<Multimedia*> cata = plat->getCatalogo();
+
+    for (Multimedia* &vide : cata) {
+        if (vide->getID() == caso51) {
+            vide->setCalificacion(caso5);
+        }
+        
+    }
+
 }
-
-void caso5(Catalogo* plat){
-    
-    std::string aidi1;
-    float califica;
-
-    cout << "Ingresa el ID del video que quieres calificar" << endl;
-    cin >> aidi1;
-    Video* vidi = plat->getVideo(aidi1);
-    cout << "Califica este video del 1 al 5" << endl;
-    cin >> califica;
-    vidi->setCalificacion(califica);
-    cout << "Calificación" + std::to_string(califica) + " asignada a video con ID: " + aidi1 << std::endl;
-
-}
+//César Pascual De la Torre A01751521
 
 int main(){
 
@@ -101,7 +158,7 @@ int main(){
     t11.agregarEpisodio(t111);
     t11.agregarEpisodio(t112);
     Episodio t121("SM21","Smiling Friends Temporada 2 Episodio 1", 9, "Comedia", 4);
-    Episodio t122("SM22","Smiling Friends Temporada 2 Episodio 2", 12, "Comedia", 4);
+    Episodio t122("SM22","Smiling Friends Temporada 2 Episodio 2", 12, "Comedia", 5);
     t12.agregarEpisodio(t121);
     t12.agregarEpisodio(t122);
     Serie s2("TW","The Witcher","Fantasia",3);
@@ -137,7 +194,7 @@ int main(){
     plataforma.agregarVideo(&p3);
 
     int input = 6;
-    Catalogo* plat;
+    Catalogo* plat = &plataforma;
 
     while(input != 0){
     
@@ -150,10 +207,10 @@ int main(){
                 plataforma.toStringC();
                 break;
             case 2:
-                caso2();
+                caso2(plat);
                 break;
             case 3:
-                caso3();
+                caso3(plat);
                 break;
             case 4:
                 caso4(plat);
@@ -170,4 +227,5 @@ int main(){
 
     }
 
-};
+}; 
+//Ambos alumnos

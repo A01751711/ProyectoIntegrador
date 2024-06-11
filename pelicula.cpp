@@ -1,9 +1,9 @@
-#include "pelicula.h" //César Pascual De la Torre A01751521 Karol Alexis A01751711
-#include "video.h"
+#include "pelicula.h" //César Pascual De la Torre A01751521 
+#include "multimedia.h"
 #include <string>
 #include <iostream>
 
-Pelicula::Pelicula(std::string aid, std::string nom, int du, std::string ge, float cal): Video{} {
+Pelicula::Pelicula(std::string aid, std::string nom, int du, std::string ge, float cal): Multimedia{"p"} {
     id = aid;
     nombre = nom;
     duracion = du;

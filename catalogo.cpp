@@ -1,17 +1,17 @@
-#include "catalogo.h"
+#include "catalogo.h" // César Pascual De la Torre A01751521
 #include <iostream>
 #include <string>
 #include <vector>
-#include "video.h"
+#include "multimedia.h"
 
 Catalogo::Catalogo(){}
 
-void Catalogo::agregarVideo(Video* v){catalogo.push_back(v);}
+void Catalogo::agregarVideo(Multimedia* v){catalogo.push_back(v);}
 
-std::vector <Video*> Catalogo::getCatalogo(){return catalogo;}
+std::vector <Multimedia*> Catalogo::getCatalogo(){return catalogo;}
 
-Video* Catalogo::getVideo(std::string ind){
-    for(Video* vid : catalogo){
+Multimedia* Catalogo::getVideo(std::string ind){
+    for(Multimedia* vid : catalogo){
         if(vid->getID() == ind){
             return vid;
         }
@@ -19,7 +19,7 @@ Video* Catalogo::getVideo(std::string ind){
 }
 
 void Catalogo::toStringC(){
-    for (Video* video : catalogo) {
+    for (Multimedia* video : catalogo) {
         video->toString();
     }
 }

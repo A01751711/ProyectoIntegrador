@@ -1,22 +1,22 @@
-#ifndef CATALOGO_H //César Pascual De la Torre A01751521 Karol Alexis A01751711
+#ifndef CATALOGO_H //César Pascual De la Torre A01751521 
 #define CATALOGO_H 
 #include <string>
 #include <vector>
-#include "video.h"
+#include "multimedia.h"
 
 
 class Catalogo{
 
     private:
 
-    std::vector <Video*> catalogo;
+    std::vector <Multimedia*> catalogo;
     
     public:
 
     Catalogo();
-    std::vector <Video*> getCatalogo();
-    Video* getVideo(std::string ind);
-    void agregarVideo(Video*);
+    std::vector <Multimedia*> getCatalogo();
+    Multimedia* getVideo(std::string ind);
+    void agregarVideo(Multimedia*);
     void toStringC();
 
 };

@@ -1,12 +1,12 @@
-#ifndef TEMPO_H //César Pascual De la Torre A01751521 Karol Alexis A01751711
+#ifndef TEMPO_H //Karol Alexis Alvarado Davila A01751711
 #define TEMPO_H 
 #include <string>
 #include <vector>
 #include "episodio.h"
-#include "video.h"
+#include "multimedia.h"
 
 
-class Temporada : public Video{
+class Temporada : public Multimedia{
 
     private:
     int epi;
